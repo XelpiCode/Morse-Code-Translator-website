@@ -24,6 +24,8 @@ MORSE_CODE_DICT = { 'A':'.-', 'B':'-...',
                     '?':'..--..', '/':'-..-.', '-':'-....-',
                     '(':'-.--.', ')':'-.--.-', ' ':'/'}
 
+REVERSE_MORSE_DICT = {morseCode : key for key, morseCode in MORSE_CODE_DICT.items()}
+
 def encrypt(text):
     encryptedTextlist = []
     for letter in text.upper():
@@ -35,8 +37,16 @@ def encrypt(text):
     return encryptedText
 
 def decrypt(text):
-    pass
-
+    decryptedTextlist = []
+    for morseCode in text.split(" "):
+        if not morseCode:
+            continue
+        if morseCode == "/":
+            decryptedTextlist.append(" ")
+        else:
+            decryptedTextlist.append(REVERSE_MORSE_DICT.get(morseCode, "?"))
+    decryptedText = "".join(decryptedTextlist).lower()
+    return decryptedText
 
 @app.route("/", methods=["GET", "POST"])
 def translate_morse():
@@ -44,10 +54,14 @@ def translate_morse():
     output = "Submit your text"
 
     if form.validate_on_submit():
-        if form.text.data:
-            output = encrypt(form.text.data)
-
-        return render_template("index.html", form=form, output=output)
+        if form.submitText.data:
+            if form.text.data:
+                output = encrypt(form.text.data)
+            return render_template("index.html", form=form, output=output)
+        else:
+            if form.text.data:
+                output = decrypt(form.text.data)
+            return render_template("index.html", form=form, output=output)
 
     return render_template("index.html", form=form, output=output)
 
