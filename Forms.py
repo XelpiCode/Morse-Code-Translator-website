@@ -12,4 +12,5 @@ def validate_text(form, field):
 
 class InputForm(FlaskForm):
     text = StringField("Input Text", validators=[DataRequired(), validate_text])
-    submit = SubmitField("Translate To Morse Code")
+    submitText = SubmitField("Translate To Morse Code")
+    submitMorse = SubmitField("Translate To English")
