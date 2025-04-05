@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Morse translate</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <div class="main-div">
+      <h1>Morse Code Translator</h1>
+      <div>
+        <div>
+          <form method="POST" action="{{ url_for('translate_morse') }}">
+            {{ form.csrf_token }}
+            <p>
+            <div><h2>Input Text</h2></div>
+              {{ form.text(size=60) }}
+              {% for err in form.text.errors %}
+              <span style="color:red">{{ err }}</span>
+              {% endfor %}
+            </p>
+            {{ form.submit() }}
+          </form>
+        </div>
+        <div>
+          <h2>Morse Code</h2>
+          <p>{{ output }}</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
