@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 from Forms import InputForm
 from dotenv import load_dotenv
+import pyperclip
 import os
 
 load_dotenv()

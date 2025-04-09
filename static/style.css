@@ -6,10 +6,8 @@
   --dark-button-border: #30363d;
   --dark-button-active: #238636;
   --dark-accent: #58a6ff;
-  --dark-header-bg: #161b22;
   --dark-border: #30363d;
-  --dark-theme-bubbles: #212830;
-  --dark-highlight: #41ce5c;
+  --light-gray: #3d4450; /* Added lighter gray for hr */
 }
 
 /* Base styles */
@@ -22,110 +20,12 @@ body {
   padding: 0;
 }
 
-/* Header styling */
-header {
-  background-color: var(--dark-header-bg);
-  border-bottom: 1px solid var(--dark-border);
-  padding: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* Navigation */
-nav {
-  background-color: var(--dark-header-bg);
-  border-bottom: 1px solid var(--dark-border);
-}
-
-nav ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-nav li {
-  margin-right: 16px;
-}
-
-nav a {
-  color: var(--dark-text);
-  text-decoration: none;
-  padding: 8px 0;
-  font-weight: 600;
-  font-size: 14px;
-}
-
-nav a:hover {
-  color: var(--dark-accent);
-}
-
-/* Button styling */
-.favButton, .theme-button {
-  background-color: var(--dark-button-bg);
-  color: var(--dark-button-text);
-  border: 1px solid var(--dark-button-border);
-  border-radius: 6px;
-  padding: 5px 16px;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-}
-
-.theme-button.active {
-  background-color: #121830;
-  color: var(--dark-highlight);
-  outline: 0 solid var(--dark-highlight);
-}
-
-/* Theme bubbles from your second image */
-.themeBubbles {
-  background-color: var(--dark-theme-bubbles);
-  outline: 0.25rem solid var(--dark-theme-bubbles);
-  border-radius: 4px;
-  padding: 4px 8px;
-}
-
-/* Content area */
-main {
-  padding: 24px;
-}
-
-/* Links */
-a {
-  color: var(--dark-accent);
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* Containers and cards */
-.container, .card {
-  background-color: var(--dark-button-bg);
-  border: 1px solid var(--dark-border);
-  border-radius: 6px;
-  margin-bottom: 16px;
-  padding: 16px;
-}
-
 /* Headings */
-h1, h2, h3, h4, h5, h6 {
+h1, h2 {
   color: var(--dark-text);
   font-weight: 600;
   margin-top: 24px;
   margin-bottom: 16px;
-}
-
-p {
-   color: var(--dark-text);
-  font-weight: 600;
-  margin-top: 12px;
-  margin-bottom: 4px;
 }
 
 h1 {
@@ -134,26 +34,18 @@ h1 {
 
 h2 {
   font-size: 24px;
-  border-bottom: 1px solid var(--dark-border);
   padding-bottom: 0.3em;
 }
 
-/* Dark top bar */
-.top-bar {
-  background-color: #161b22;
-  padding: 16px;
-  display: flex;
-  align-items: center;
-}
-
-.site-title {
-  color: #f0f6fc;
+p {
+  color: var(--dark-text);
   font-weight: 600;
-  font-size: 16px;
+  margin-top: 12px;
+  margin-bottom: 4px;
 }
 
 /* Form elements */
-input, select, textarea, button {
+input, button {
   background-color: var(--dark-button-bg);
   border: 1px solid var(--dark-border);
   border-radius: 6px;
@@ -166,112 +58,23 @@ input, select, textarea, button {
 button {
   cursor: pointer;
   font-weight: 500;
+  margin-right: 8px;
+  margin-top: 8px;
 }
 
 button:hover {
   background-color: #30363d;
 }
 
-button.primary {
-  background-color: var(--dark-button-active);
-  border-color: rgba(240, 246, 252, 0.1);
+/* Horizontal rule - lighter gray */
+hr {
+  border: none;
+  height: 1px;
+  background-color: var(--light-gray);
+  margin: 16px 0;
 }
 
-button.primary:hover {
-  background-color: #2ea043;
-}
-
-/* Code blocks */
-pre, code {
-  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, monospace;
-  background-color: rgba(110, 118, 129, 0.1);
-  border-radius: 6px;
-}
-
-code {
-  padding: 0.2em 0.4em;
-  font-size: 85%;
-}
-
-pre {
-  padding: 16px;
-  overflow: auto;
-}
-
-pre code {
-  background-color: transparent;
-  padding: 0;
-}
-
-/* Tables */
-table {
-  border-collapse: collapse;
-  width: 100%;
-  margin-bottom: 16px;
-}
-
-table th, table td {
-  padding: 6px 13px;
-  border: 1px solid var(--dark-border);
-}
-
-table tr {
-  background-color: var(--dark-bg);
-  border-top: 1px solid var(--dark-border);
-}
-
-table tr:nth-child(2n) {
-  background-color: var(--dark-button-bg);
-}
-
-/* Dark header bar with title text as seen in 2nd image */
-.dark-header {
-  background-color: #0d1117;
-  color: #c9d1d9;
-  padding: 10px 16px;
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid var(--dark-border);
-}
-
-/* Match the exact style from your second image */
-.themed-header {
-  background-color: #212830;
-  color: #c9d1d9;
-  border-radius: 6px;
-  padding: 8px 12px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.header-title {
-  color: #41ce5c;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-/* Control dots from the second image */
-.control-dots {
-  display: flex;
-  gap: 6px;
-}
-
-.dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: #41ce5c;
-}
-
-.dot:nth-child(2) {
-  background-color: #ccc;
-}
-
-.dot:nth-child(3) {
-  background-color: #ccc;
-}
-
+/* Main container layout */
 .main-div {
   position: fixed;
   inset: 0px;
